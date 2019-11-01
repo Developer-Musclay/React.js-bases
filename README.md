@@ -3,6 +3,7 @@ React.js basics
 
 This very simple repository will allow you to understand the basics of React.js.
 
+
 Here we will see in particular:
 
 - The creation of our first component : CustomerList 
@@ -11,28 +12,34 @@ Here we will see in particular:
   + use of local state
 
 - Events  
+  + button onClick 
+
+- Modify the state and see the component react  
+  + 
+
+
 
 Two methods to use this repository:
 
-1)
-- Observe on Github via the different branch and commit
+1) - Observe on Github via the different commit
 
-2)
-- Clone this repo
-- make the following commands in your terminal (at the root of the folder):
-yarn
-yarn start
+2)  - Clone this repo
+    - make the following commands in your terminal (at the root of the folder):
+      + yarn
+      + yarn start
 
 
-* It's your turn! Enjoy! *
+
+
+--> It's your turn! Enjoy! 
 
 
 Note: It is provided with the following dependencies:
 
-     - "prop-types"
-     - "react"
-     - "react-dom"
-     - "axios"
-     - "classnames"
-     - "react-redux"
-     - "redux"
+      "prop-types"
+      "react"
+      "react-dom"
+      "axios"
+      "classnames"
+      "react-redux"
+      "redux"

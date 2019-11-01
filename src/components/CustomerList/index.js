@@ -17,6 +17,9 @@ class CustomerList extends React.Component {
     ]
   };
 
+  handleClick = () => {
+    console.log(this.state);
+  }
 
   render() {
     const title = "* Customer list *"
@@ -24,6 +27,7 @@ class CustomerList extends React.Component {
     return (
       <div>     
         <h2>{title}</h2>
+        <button onClick={this.handleClick}>Click me</button>
         <ul>
           {this.state.clients.map(customer => (
             <li>
