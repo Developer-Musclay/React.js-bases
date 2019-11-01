@@ -15,6 +15,7 @@ Here we will see in particular:
   + button onClick 
 
 - Modify the state and see the component react  
+  + The use of this.setState() on a counter
   + 
 
 

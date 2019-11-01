@@ -9,6 +9,7 @@ import CustomerList from '../CustomerList';
 const App = () => (
   <div id="app">
     <h1>React.js basics</h1>
+    <p>by Developer_Musclay</p>
     <CustomerList />
   </div>
 );

@@ -14,10 +14,12 @@ class CustomerList extends React.Component {
       { id: 2, name: "Gael" },
       { id: 3, name: "Damien" },
       { id: 4, name: "Flo" }
-    ]
+    ],
+    counter : 0
   };
 
   handleClick = () => {
+    this.setState({ counter: this.state.counter + 1 })
     console.log(this.state);
   }
 
@@ -25,8 +27,9 @@ class CustomerList extends React.Component {
     const title = "* Customer list *"
     
     return (
-      <div>     
+      <div className="list">     
         <h2>{title}</h2>
+        {this.state.counter}
         <button onClick={this.handleClick}>Click me</button>
         <ul>
           {this.state.clients.map(customer => (
