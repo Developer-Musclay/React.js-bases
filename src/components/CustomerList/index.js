@@ -15,13 +15,16 @@ class CustomerList extends React.Component {
       { id: 3, name: "Damien" },
       { id: 4, name: "Flo" }
     ],
-    counter : 0
   };
 
-  handleClick = () => {
-    this.setState({ counter: this.state.counter + 1 })
-    console.log(this.state);
-  }
+  handleDelete = (id) => {
+    const clients = this.state.clients.slice();
+    const index = clients.findIndex(customer => customer.id === id);
+
+    clients.splice(index, 1);
+
+    this.setState({ clients: clients });
+  };
 
   render() {
     const title = "* Customer list *"
@@ -29,12 +32,10 @@ class CustomerList extends React.Component {
     return (
       <div className="list">     
         <h2>{title}</h2>
-        {this.state.counter}
-        <button onClick={this.handleClick}>Click me</button>
         <ul>
           {this.state.clients.map(customer => (
             <li>
-              {customer.name} <button>X</button>
+              {customer.name} <button onClick = {() => this.handleDelete(customer.id)}>X</button>
             </li>
           ))}
         </ul>

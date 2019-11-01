@@ -16,7 +16,7 @@ Here we will see in particular:
 
 - Modify the state and see the component react  
   + The use of this.setState() on a counter
-  + 
+  + .slice & .findIndex 
 
 
 
