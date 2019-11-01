@@ -15,6 +15,7 @@ class CustomerList extends React.Component {
       { id: 3, name: "Damien" },
       { id: 4, name: "Flo" }
     ],
+    newCustomer: ''
   };
 
   handleDelete = (id) => {
@@ -25,6 +26,25 @@ class CustomerList extends React.Component {
 
     this.setState({ clients: clients });
   };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const id = new Date().getTime();
+    const name = this.state.newCustomer;
+
+    const customer = {id: id, name: name};
+
+    const clients = this.state.clients.slice();
+    clients.push(customer);
+
+    this.setState({clients: clients, newCustomer: ''});
+  }
+
+  handleChange = (event) => {
+    const value = event.currentTarget.value;
+    this.setState({ newCustomer: value });
+  }
 
   render() {
     const title = "* Customer list *"
@@ -39,8 +59,8 @@ class CustomerList extends React.Component {
             </li>
           ))}
         </ul>
-        <form>
-          <input type="text" placeholder="add a new customer"></input>
+        <form onSubmit={this.handleSubmit}>
+          <input value={this.state.newCustomer} onChange={this.handleChange} type="text" placeholder="add a new customer" />
           <button>confirm</button>
         </form>
       </div>
