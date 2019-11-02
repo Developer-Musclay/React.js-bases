@@ -19,6 +19,9 @@ Here we will see in particular:
   + .slice & .findIndex 
   + Form: adding and deleting
 
+- Refactoring
+  + spread operator
+  + division / separation of components
 
 
 Two methods to use this repository:

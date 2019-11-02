@@ -19,12 +19,12 @@ class CustomerList extends React.Component {
   };
 
   handleDelete = (id) => {
-    const clients = this.state.clients.slice();
+    const clients = [...this.state.clients];
     const index = clients.findIndex(customer => customer.id === id);
 
     clients.splice(index, 1);
 
-    this.setState({ clients: clients });
+    this.setState({ clients });
   };
 
   handleSubmit = (event) => {
@@ -33,17 +33,16 @@ class CustomerList extends React.Component {
     const id = new Date().getTime();
     const name = this.state.newCustomer;
 
-    const customer = {id: id, name: name};
+    const customer = {id, name};
 
-    const clients = this.state.clients.slice();
-    clients.push(customer);
+    const clients = [...this.state.clients];
+    clients.push({id, name});
 
-    this.setState({clients: clients, newCustomer: ''});
+    this.setState({clients, newCustomer: ''});
   }
 
   handleChange = (event) => {
-    const value = event.currentTarget.value;
-    this.setState({ newCustomer: value });
+    this.setState({ newCustomer: event.currentTarget.value });
   }
 
   render() {
