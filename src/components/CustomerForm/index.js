@@ -11,6 +11,7 @@ class CustomerForm extends Component {
     this.setState({ newCustomer: event.currentTarget.value });
   };
 
+  // function to submit the form
   handleSubmit = (event) => {
     event.preventDefault();
 

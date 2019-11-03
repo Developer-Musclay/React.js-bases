@@ -21,6 +21,7 @@ class CustomerList extends React.Component {
     ]
   };
 
+  // function to delete a client
   handleDelete = (id) => {
     const clients = [...this.state.clients];
     const index = clients.findIndex(customer => customer.id === id);
@@ -30,6 +31,7 @@ class CustomerList extends React.Component {
     this.setState({ clients });
   };
 
+  // function to add a customer
   handleAdd = customer => {
     const clients = [...this.state.clients];
     clients.push(customer);

@@ -1,11 +1,11 @@
-# React-bases
+# React.js-bases
 
-React.js basics
+## React.js basics
 
 This very simple repository will allow you to understand the basics of React.js.
 
 
-Here we will see in particular:
+### Here we will see in particular:
 
 - The creation of our first component : CustomerList 
   + use of a separate component
@@ -25,9 +25,12 @@ Here we will see in particular:
   + division / separation of components
   + props / communication between components
 
+- Functional components  
+  + Customer component transformation that does not require state management
 
 
-Two methods to use this repository:
+
+### Two methods to use this repository:
 
 1) - Observe on Github via the different commit
 
@@ -38,10 +41,10 @@ Two methods to use this repository:
 
 
 
---> It's your turn! Enjoy! 
+## --> It's your turn! Enjoy! 
 
 
-Note: It is provided with the following dependencies:
+### Note: It is provided with the following dependencies:
 
       "prop-types"
       "react"
