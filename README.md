@@ -1,4 +1,5 @@
 # React-bases
+
 React.js basics
 
 This very simple repository will allow you to understand the basics of React.js.
@@ -22,6 +23,8 @@ Here we will see in particular:
 - Refactoring
   + spread operator
   + division / separation of components
+  + props / communication between components
+
 
 
 Two methods to use this repository:
@@ -32,7 +35,6 @@ Two methods to use this repository:
     - make the following commands in your terminal (at the root of the folder):
       + yarn
       + yarn start
-
 
 
 

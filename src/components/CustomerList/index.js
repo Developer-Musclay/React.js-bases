@@ -1,6 +1,10 @@
 // == Import : npm
 import React from 'react';
 
+// == Import : local
+import Customer from '../Customer';
+import CustomerForm from '../CustomerForm';
+
 // == Import : style
 import './list.scss';
 
@@ -14,8 +18,7 @@ class CustomerList extends React.Component {
       { id: 2, name: "Gael" },
       { id: 3, name: "Damien" },
       { id: 4, name: "Flo" }
-    ],
-    newCustomer: ''
+    ]
   };
 
   handleDelete = (id) => {
@@ -27,22 +30,11 @@ class CustomerList extends React.Component {
     this.setState({ clients });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    const id = new Date().getTime();
-    const name = this.state.newCustomer;
-
-    const customer = {id, name};
-
+  handleAdd = customer => {
     const clients = [...this.state.clients];
-    clients.push({id, name});
+    clients.push(customer);
 
-    this.setState({clients, newCustomer: ''});
-  }
-
-  handleChange = (event) => {
-    this.setState({ newCustomer: event.currentTarget.value });
+    this.setState({ clients });
   }
 
   render() {
@@ -53,15 +45,10 @@ class CustomerList extends React.Component {
         <h2>{title}</h2>
         <ul>
           {this.state.clients.map(customer => (
-            <li>
-              {customer.name} <button onClick = {() => this.handleDelete(customer.id)}>X</button>
-            </li>
+            <Customer details={customer} onDelete={this.handleDelete}/>
           ))}
         </ul>
-        <form onSubmit={this.handleSubmit}>
-          <input value={this.state.newCustomer} onChange={this.handleChange} type="text" placeholder="add a new customer" />
-          <button>confirm</button>
-        </form>
+        <CustomerForm onCustomerAdd={this.handleAdd} />    
       </div>
     );
   } 
